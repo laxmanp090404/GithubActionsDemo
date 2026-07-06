@@ -1,59 +1,111 @@
-# GithubActionsDemo
+# Weather Forecast Application - Github Actions Demo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
 
-## Development server
 
-To start a local development server, run:
+## ✨ Features
 
+- **Real-time Weather Data**: Fetches and displays weather forecasts from an API
+- **Interactive UI**: Refresh button with loading states and error handling
+- **Responsive Design**: Clean, modern table layout with hover effects
+- **Visual Indicators**: 
+  - Hot temperature rows (>30°C) highlighted in orange
+  - Loading states with user feedback
+  - Error handling with clear messages
+- **Signal-based State Management**: Uses Angular's modern signal API for reactive data
+- **Standalone Components**: Built with Angular's standalone component architecture
+
+## 🛠️ Technologies
+
+- **Angular**: Latest version with standalone components
+- **TypeScript**: For type-safe code
+- **Signals**: Angular's reactive state management
+- **CSS3**: Custom styling with responsive design
+
+
+
+
+## 🚀 Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/laxmanp090404/GithubActionsDemo
+cd GithubActionsDemo
+```
+
+2. **Install dependencies**
+```bash
+npm install
+```
+
+3. **Set up environment variables**
+Create an `environment.ts` file in `src/environment/`:
+```typescript
+export const baseUrl = "YOUR_API_BASE_URL";
+```
+
+## 🏃 Running the Application
+
+### Development Server
 ```bash
 ng serve
 ```
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any source files.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🔨 Building for Production
 
 ```bash
-ng generate --help
+ng build --configuration production
+```
+The build artifacts will be stored in the `dist/` directory.
+
+### GitHub Pages Deployment
+The project includes a GitHub Actions workflow for automatic deployment:
+1. Push to the `main` branch
+2. GitHub Actions automatically builds and deploys to GitHub Pages
+3. Access your app at `https://[username].github.io/GithubActionsDemo/`
+4. My app is deployed at [https://laxmanp090404.github.io/GithubActionsDemo/](https://laxmanp090404.github.io/GithubActionsDemo/)
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   └── weatherforecast/
+│   │       ├── weatherforecast.component.ts
+│   │       ├── weatherforecast.html
+│   │       └── weatherforecast.css
+│   ├── models/
+│   │   └── weatherforecast.model.ts
+│   ├── services/
+│   │   └── weatherforecast.api.service.ts
+│   └── app.component.ts
+├── environment/
+│   └── environment.ts
+└── styles.css
 ```
 
-## Building
 
-To build the project run:
+## 🔧 Configuration
 
-```bash
-ng build
+### Environment Variables
+
+The application uses environment files for configuration:
+
+```typescript
+// environment.ts
+export const baseUrl = "https://api.example.com";
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### GitHub Actions Setup
 
-## Running unit tests
+The included workflow automatically deploys to GitHub Pages:
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+1. Create `API_BASE_URL` secret in your repository
+2. Enable GitHub Pages in repository settings
+3. Push to `main` branch for automatic deployment
 
-```bash
-ng test
-```
+![Demo](image.png)
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

@@ -32,3 +32,17 @@ p {
   color: red;
   font-weight: bold;
 } 
+tr.hot {
+  background-color: #c06e03;
+  color: white;
+  
+}
+.ref-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}

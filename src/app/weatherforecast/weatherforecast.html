@@ -1,3 +1,9 @@
+<button
+  class="ref-btn"
+  (click)="loadWeatherForecast()"
+  [disabled]="loading()">
+  {{ loading() ? 'Refreshing...' : 'Refresh' }}
+</button>
 @if (loading()) {
   <p>Loading...</p>
 }
@@ -7,6 +13,7 @@
 }
 
 @if (!loading() && weatherForecasts().length > 0) {
+  
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -18,7 +25,7 @@
     </thead>
     <tbody>
       @for (forecast of weatherForecasts(); track forecast.date) {
-        <tr>
+        <tr [class.hot]="forecast.temperatureC > 30">
           <td>{{ forecast.date }}</td>
           <td>{{ forecast.temperatureC }}</td>
           <td>{{ forecast.temperatureF }}</td>
@@ -27,4 +34,6 @@
       }
     </tbody>
   </table>
+
+  <h2>Total number of forecasts: {{ weatherForecasts().length }}</h2>
 }
